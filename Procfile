@@ -1,0 +1,1 @@
+web: gunicorn djangocovid19.wsgi --log-file=-
