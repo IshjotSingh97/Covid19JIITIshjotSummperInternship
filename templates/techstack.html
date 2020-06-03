@@ -1,23 +1,46 @@
 {% extends 'index.html' %}
-{% block title %}Tech Stack{% endblock %}
 {% load static %}
+{% block title %}Tech Stack{% endblock %}
 {% block content %}
-<div class="card" style="width: 22rem;margin: 1rem auto;">
-    <img class="card-img-top" src="{% static 'stack.jpg' %}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" style="font-weight: bold;margin: 0 auto;text-align: center;">TechStack</h5>                    
-      <p class="card-text">
-        FrontEnd / Client Side - Material Design By Google + JavaScript 
-    </p>
-    <p class="card-text">
-        Backend / Server Side - Django Framework (Python)
-    </p>
-    <p class="card-text">
-        Database - Sqlite / PostgreSQL
-    </p>
-    <p class="card-text">
-        Deployment - Heroku
-    </p>
+<p class="h1" style="text-align: center;display: block;margin: 1rem auto;">Tech Stack</p>
+<p class="h6" style="text-align: center;display: block;margin: 1rem auto;">Click To Highlight</p>
+<div class="row">
+    <div class="col-md-6" style="margin: 0 auto;">
+        <img class="card-img-top img-fluid" src="{% static 'techstack.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="font-weight: bold;">Databse</h5>
+                    </div>
+                    <p class="mb-1">SQLite / PostgreSQL</p>
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="font-weight: bold;">Front End</h5>
+                    </div>
+                    <p class="mb-1">HTML CSS JavaScript Bootstrap</p>
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="font-weight: bold;">Backend</h5>
+                    </div>
+                    <p class="mb-1">Python Django</p>
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="font-weight: bold;">API's</h5>
+                    </div>
+                    <p class="mb-1">News API Covid19Postman API</p>
+                </a>
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="font-weight: bold;">Icons and Images</h5>
+                    </div>
+                    <p class="mb-1">Fontawesome Vector Illustrations</p>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 {% endblock %}

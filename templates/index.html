@@ -14,7 +14,7 @@
     <link href="{% static 'material.min.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body style="margin-bottom: 30rem;">
     <header class="navbar navbar-dark navbar-full bg-primary doc-navbar-default">
         <button aria-controls="navdrawerDefault" aria-expanded="false" aria-label="Toggle Navdrawer" class="navbar-toggler" data-target="#navdrawerDefault" data-toggle="navdrawer">
             <span class="navbar-toggler-icon"></span>
@@ -38,6 +38,9 @@
                     <a class="nav-link" href="{% url 'getnews' %}">Get Live News</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'techstack' %}">Get Tech Stack</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link disabled" href="#"><i class="material-icons mr-3">alarm_off</i> Disabled with icon</a>
                 </li>
                 <li class="nav-item">
@@ -46,31 +49,31 @@
             </ul>
         </div>
     </div>
-
     <!-- Main Block -->
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          {% block content %}
-          {% endblock %}
+        {% block content %}
+        <div class="row">
+            <div class="col-md-6" style="display: block;margin: 0 auto;">
+                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
+                <script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script>
+            </div>
         </div>
-      </div>
+        {% endblock %}
     </div>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'material.min.js' %}"></script>
     <script>
     $(document).ready(function() {
         // This command is used to initialize some elements and make them work properly
         $('#navdrawerDefault').navdrawer('show');
     });
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
-    <script src="{% static 'material.min.js' %}"></script>
 </body>
 
 </html>
