@@ -1,33 +1,23 @@
 {% extends 'index.html' %}
 {% block title %}Tech Stack{% endblock %}
+{% load static %}
 {% block content %}
-<div class="demo-card-square mdl-card mdl-shadow--2dp" style="margin: 1rem auto 0 auto;">
-    <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text" style="margin: 0 auto;font-weight: bold;">TechStack</h2>
+<div class="card" style="width: 22rem;margin: 1rem auto;">
+    <img class="card-img-top" src="{% static 'stack.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="font-weight: bold;margin: 0 auto;text-align: center;">TechStack</h5>                    
+      <p class="card-text">
+        FrontEnd / Client Side - Material Design By Google + JavaScript 
+    </p>
+    <p class="card-text">
+        Backend / Server Side - Django Framework (Python)
+    </p>
+    <p class="card-text">
+        Database - Sqlite / PostgreSQL
+    </p>
+    <p class="card-text">
+        Deployment - Heroku
+    </p>
     </div>
-    <div class="mdl-card__supporting-text">
-        <ul class="demo-list-item mdl-list" style="margin: 0 auto;">
-            <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    FrontEnd / Client Side - Material Design By Google + JavaScript
-                </span>
-            </li>
-            <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    Backend / Server Side - Django Framework (Python)
-                </span>
-            </li>
-            <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    Database - Sqlite / PostgreSQL
-                </span>
-            </li>
-            <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    Deployment - Heroku
-                </span>
-            </li>
-        </ul>
-    </div>
-</div>
+  </div>
 {% endblock %}

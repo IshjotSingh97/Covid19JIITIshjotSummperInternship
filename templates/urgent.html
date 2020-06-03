@@ -1,6 +1,15 @@
 {% extends 'index.html' %}
+{% load static %}
 {% block title %}Urgent{% endblock %}
 {% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6" style="margin: 0 auto;">
+    <img src="{% static 'emergency.jpg' %}" alt="." class="img-fluid">
+  </div>
+  </div>
+</div>
+<br>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="margin: 1rem auto 1rem auto;">
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text" style="font-weight: bold;">Official Support : Government Of India</h2>

@@ -18,7 +18,7 @@ def trackingtable(request):
 
 def getnews(request):
     try:
-        q = "coronavirus"
+        q = "coronavirus cases"
         urlpart1 = "https://newsapi.org/v2/everything?q="
         urlpart2 = "&sortBy=publishedAt&pageSize=12&language=en&apiKey="
         API_KEY = "09ea697cc4764ec0ab4987df2ad097fc"
