@@ -19,7 +19,7 @@
         <button aria-controls="navdrawerDefault" aria-expanded="false" aria-label="Toggle Navdrawer" class="navbar-toggler" data-target="#navdrawerDefault" data-toggle="navdrawer">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <span class="navbar-brand mr-auto">Navdrawer</span>
+        <span class="navbar-brand mr-auto">JIIT COVID-19 APP</span>
     </header>
     <div aria-hidden="true" class="navdrawer" id="navdrawerDefault" tabindex="-1">
         <div class="navdrawer-content">
@@ -34,6 +34,9 @@
             <div class="navdrawer-divider"></div>
             <p class="navdrawer-subheader">Navdrawer subheader</p>
             <ul class="navdrawer-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Dashboard</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'getnews' %}">Get Live News</a>
                 </li>
@@ -52,9 +55,23 @@
     <!-- Main Block -->
     <div class="container-fluid">
         {% block content %}
+        <p class="h1" style="text-align: center;display: block;margin: 1rem auto;">JIIT COVID-19 APP</p>
         <div class="row">
-            <div class="col-md-6" style="display: block;margin: 0 auto;">
-                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
+            <div class="col-md-12" style="margin:1rem auto;">
+                <img src="{% static 'jiit.png' %}" alt="..." class="img-fluid" style="margin: 0 auto;display: block;">
+            </div>
+            <div class="col-md-6" style="margin:1rem auto;">
+                <div class="bingwidget" data-type="covid19_stats" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
+                <script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="bingwidget" data-type="covid19_map" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
+                <script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script>
+            </div>
+            <div class="col-md-6">
+                <div class="bingwidget" data-type="covid19_trends" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
                 <script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script>
             </div>
         </div>
