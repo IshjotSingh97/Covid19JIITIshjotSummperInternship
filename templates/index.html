@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Add Material CSS, replace Bootstrap CSS -->
     <link href="{% static 'material.min.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'jiit.png' %}" type="image/gif" sizes="16x16">
 </head>
 
 <body style="margin-bottom: 30rem;">
@@ -24,15 +25,10 @@
     <div aria-hidden="true" class="navdrawer" id="navdrawerDefault" tabindex="-1">
         <div class="navdrawer-content">
             <div class="navdrawer-header">
-                <a class="navbar-brand px-0" href="#">JIIT COVID-19 APP</a>
+                <a class="navbar-brand px-0" href="/">JIIT COVID-19 APP</a>
             </div>
-            <nav class="navdrawer-nav">
-                <a class="nav-item nav-link active" href="#">Active</a>
-                <a class="nav-item nav-link disabled" href="#">Disabled</a>
-                <a class="nav-item nav-link" href="#">Link</a>
-            </nav>
             <div class="navdrawer-divider"></div>
-            <p class="navdrawer-subheader">Navdrawer subheader</p>
+            <p class="navdrawer-subheader">Navigation Links</p>
             <ul class="navdrawer-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Dashboard</a>
@@ -41,13 +37,10 @@
                     <a class="nav-link" href="{% url 'getnews' %}">Get Live News</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mythbusters' %}">Myth Busters</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'techstack' %}">Get Tech Stack</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#"><i class="material-icons mr-3">alarm_off</i> Disabled with icon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="material-icons mr-3">link</i> Link with icon</a>
                 </li>
             </ul>
         </div>

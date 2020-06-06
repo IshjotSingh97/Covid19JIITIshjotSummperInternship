@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
+from .models import *
 import requests,json
+
 
 # globalLike = 0
 globalLike = 0
@@ -55,5 +57,8 @@ def getlike(request):
     }
     return render(request,'index.html',context=mydict)
 
-def myths(request):
+def mythbuster(request):
+    mydict = {
+    "myths" : Myth.objects.all()
+    }
     return render(request,'myths.html')
