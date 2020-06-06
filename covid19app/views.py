@@ -2,10 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 import requests,json
 
+# globalLike = 0
+globalLike = 0
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    global globalLike
+    mydict = {
+    "globalLike" : globalLike
+    }
+    return render(request,'index.html',context=mydict)
 
 def urgent(request):
     return render(request,'urgent.html')
@@ -40,3 +46,14 @@ def getnews(request):
             "result":False
         }
         return render(request,'news.html',context=mydict)
+
+def getlike(request):
+    global globalLike
+    globalLike+=1
+    mydict = {
+    "globalLike" : globalLike
+    }
+    return render(request,'index.html',context=mydict)
+
+def myths(request):
+    return render(request,'myths.html')

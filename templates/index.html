@@ -57,14 +57,31 @@
         {% block content %}
         <p class="h1" style="text-align: center;display: block;margin: 1rem auto;">JIIT COVID-19 APP</p>
         <div class="row">
+            <div class="col-md-4">
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+            </div>
+            <div class="col-md-4">
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+            </div>
+            <div class="col-md-4">
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+            </div>
+        
+</button>
+
+        </div>
+        <div class="row">
             <div class="col-md-4" style="margin:1rem auto;">
-                <img src="{% static 'coronalogo1.jpg' %}" alt="..." class="img-fluid" style="margin: 0 auto;display: block;">
+                <img src="{% static 'coronalogo1.jpg' %}" alt="..." class="img-fluid img-thumbnail" style="margin: 0 auto;display: block;">
             </div>
             <div class="col-md-4" style="margin:1rem auto;">
-                <img src="{% static 'jiit.png' %}" alt="..." class="img-fluid" style="margin: 0 auto;display: block;">
+                <img src="{% static 'jiit.png' %}" alt="..." class="img-fluid" style="margin: 0 auto;display: block;height: 12rem;">
             </div>
             <div class="col-md-4" style="margin:1rem auto;">
-                <img src="{% static 'covidlogo2.png' %}" alt="..." class="img-fluid" style="margin: 0 auto;display: block;">
+                <img src="{% static 'coronalogo2.jpg' %}" alt="..." class="img-fluid img-thumbnail" style="margin: 0 auto;display: block;">
             </div>
             <div class="col-md-6" style="margin:1rem auto;">
                 <div class="bingwidget" data-type="covid19_stats" data-market="en-us" data-language="en-us" data-app="bingwidget" style="display: block;margin: 0 auto;"></div>
@@ -82,11 +99,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" >
                 <img src="{% static 'info.jpg' %}" class="img-fluid img-thumbnail">
             </div>
-            <div class="col-md-6">
-                <img src="" class="img-fluid img-thumbnail">
+            <div class="col-md-6" >
+                <img src="{% static 'info2.jpg' %}" class="img-fluid img-thumbnail">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 1rem;">
+            <div class="col-md-12">
+                <img src="{% static 'info3.jpg' %}" class="img-fluid img-thumbnail">
             </div>
         </div>
         {% endblock %}
