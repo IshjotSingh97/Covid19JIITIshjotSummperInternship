@@ -3,16 +3,16 @@
 {% block content %}
 <p class="h1" style="text-align: center;display: block;margin: 1rem auto;">Myth Busters</p>
 <p class="h4" style="text-align: center;display: block;margin: 1rem auto;">Get your facts right</p>
+{% for myth in myths %}
 <div class="row">
-    {% for myth in myths %}
-    <div class="card mb-3">
-        <img class="card-img-top" src="{{myth.img}}" alt="Card image cap">
+    <div class="card bg-info text-white mb-3" style="max-width: 18rem;margin: 0 auto;">
+        <div class="card-header">Soure WHO</div>
         <div class="card-body">
             <h5 class="card-title">{{myth.title}}</h5>
-            <p class="card-text"><small class="text-muted">Source WHO </small></p>
-            <a class="card-text" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters"><small class="text-muted">Click Here : Link</small></a>
+            <p class="card-text">{{myth.subject}}</p>
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
 </div>
 {% endblock %}

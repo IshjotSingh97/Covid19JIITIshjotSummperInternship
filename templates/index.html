@@ -13,6 +13,24 @@
     <!-- Add Material CSS, replace Bootstrap CSS -->
     <link href="{% static 'material.min.css' %}" rel="stylesheet">
     <link rel="icon" href="{% static 'jiit.png' %}" type="image/gif" sizes="16x16">
+    <style type="text/css">
+    /* For mobile: */
+
+    @media only screen and (max-width: 767px) {
+        .iframeclass {
+            width: 17.5rem;
+        }
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        /* For desktop: */
+        .iframeclass {
+            width: 37.5rem;
+        }
+    }
+    </style>
 </head>
 
 <body style="margin-bottom: 30rem;">
@@ -25,9 +43,11 @@
     <div aria-hidden="true" class="navdrawer" id="navdrawerDefault" tabindex="-1">
         <div class="navdrawer-content">
             <div class="navdrawer-header">
+                <img src="{% static 'jiit.png' %}" class="img-fluid img-fluid" style="height: 50px;width: 50px;display: block;margin: 0 auto;">
+            </div>
+            <div class="navdrawer-header">
                 <a class="navbar-brand px-0" href="/">JIIT COVID-19 APP</a>
             </div>
-            <div class="navdrawer-divider"></div>
             <p class="navdrawer-subheader">Navigation Links</p>
             <ul class="navdrawer-nav">
                 <li class="nav-item">
@@ -42,6 +62,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'techstack' %}">Get Tech Stack</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'acknowledgement' %}">Acknowledgment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'urgent' %}">Emergency / Urgent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'comments' %}">Comments</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -50,21 +79,50 @@
         {% block content %}
         <p class="h1" style="text-align: center;display: block;margin: 1rem auto;">JIIT COVID-19 APP</p>
         <div class="row">
-            <div class="col-md-4">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
+            <div class="col-md-4" style="padding: 1rem;">
+                <button type="button" class="btn btn-success"style="margin: 0 auto;display: block;" >
+                <a href="whatsapp://send?text=Covid19appJIIT%0aStay updated with Covid-19 tracking activities%0aPlease share our app and stay safe%0ahttps://jiitcovid19appishjot.herokuapp.com/%0aThanks" style="color: white;text-decoration: none;">Share via Whatsapp</a>
+                </button>
             </div>
-            <div class="col-md-4">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
+            <div class="col-md-4" style="padding: 1rem;">
+                <button type="button" class="btn btn-info"style="margin: 0 auto;display: block;" >
+                <a href="{% url 'getlike' %}" style="color: white;text-decoration: none;">{{globalLike}} Likes (Click To Like)</a>
+                </button>
             </div>
-            <div class="col-md-4">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
+            <div class="col-md-4" style="padding: 1rem;">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin: 0 auto;display: block;">
+                    Launch Comment Box
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment Box</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{% url 'comments' %}" method="GET" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="title">Comment</label>
+                                        <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Comment" name="title">
+                                        <label for="user">Username</label>
+                                        <input type="text" class="form-control" id="user" aria-describedby="emailHelp" name="user" placeholder="Username">
+                                    </div>
+                                <button type="submit" class="btn btn-primary">Comment</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-</button>
-
+            </button>
         </div>
         <div class="row">
             <div class="col-md-4" style="margin:1rem auto;">
@@ -92,10 +150,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6" >
+            <div class="col-md-6" style="margin: 0 auto;">
+                <iframe height="560" src="https://app.developer.here.com/coronavirus/" frameborder="0" class="iframeclass"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <img src="{% static 'info.jpg' %}" class="img-fluid img-thumbnail">
             </div>
-            <div class="col-md-6" >
+            <div class="col-md-6">
                 <img src="{% static 'info2.jpg' %}" class="img-fluid img-thumbnail">
             </div>
         </div>
@@ -105,21 +168,31 @@
             </div>
         </div>
         {% endblock %}
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="{% static 'material.min.js' %}"></script>
-    <script>
-    $(document).ready(function() {
-        // This command is used to initialize some elements and make them work properly
-        $('#navdrawerDefault').navdrawer('show');
-    });
-    </script>
-    <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
+        <div class="row" style="margin-top: 1rem;">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="/">Dashboard</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="{% static 'material.min.js' %}"></script>
+        <script>
+        $(document).ready(function() {
+            // This command is used to initialize some elements and make them work properly
+            $('#navdrawerDefault').navdrawer('show');
+        });
+        </script>
+        <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
 </body>
 
 </html>

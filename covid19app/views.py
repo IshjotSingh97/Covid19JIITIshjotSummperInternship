@@ -57,8 +57,32 @@ def getlike(request):
     }
     return render(request,'index.html',context=mydict)
 
-def mythbuster(request):
+def mythbusters(request):
     mydict = {
     "myths" : Myth.objects.all()
     }
-    return render(request,'myths.html')
+    return render(request,'myths.html',context=mydict)
+
+def acknowledgement(request):
+    return render(request,'acknowledgement.html')
+
+def comments(request):
+    try:
+        obj = Comment()
+        obj.title =  request.GET['title']
+        obj.user = request.GET['user']
+        print(obj)
+        obj.save()
+
+        mydict = {
+        "comments": Comment.objects.all()
+        }
+        return render(request,'comments.html',context=mydict)
+    except:
+        mydict = {
+        "comments": Comment.objects.all()
+        }
+        return render(request,'comments.html',context=mydict)
+
+
+    

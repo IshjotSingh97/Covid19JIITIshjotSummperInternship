@@ -2,21 +2,12 @@
 {% load static %}
 {% block title %}Urgent{% endblock %}
 {% block content %}
-<div class="container-fluid">
-  <div class="row">
+<p class="h1" style="text-align: center;display: block;margin: 1rem auto;">Get Urgent Helpline</p>
+<p class="h6" style="text-align: center;display: block;margin: 1rem auto;">Refer Links Below</p>
+<div class="row">
     <div class="col-md-6" style="margin: 0 auto;">
-    <img src="{% static 'emergency.jpg' %}" alt="." class="img-fluid">
-  </div>
-  </div>
-</div>
-<br>
-<div class="demo-card-wide mdl-card mdl-shadow--2dp" style="margin: 1rem auto 1rem auto;">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text" style="font-weight: bold;">Official Support : Government Of India</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      Click to navigate to these links
-      <br>
+    <img src="{% static 'emergency.jpg' %}" alt="." class="img-fluid img-thumbnail">
+    <div class="card-body">
       <a href="https://www.mygov.in/covid-19/" style="margin-top: 1rem;display: block;">mygov.in</a>
       <br>
       <a href="https://www.mohfw.gov.in/" style="margin-top: 1rem;display: block;">mohfw.gov.in</a>
@@ -30,13 +21,7 @@
       <a href="tel:+91-11-23978046" style="margin-top: 1rem;display: block;">+91-11-23978046 (telephone)</a>
       <br>
       <a href="tel:1075" style="margin-top: 1rem;display: block;">1075 (toll free)</a>
-
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="background-color: green;color: white;"
-       href="whatsapp://send?text=Covid19appJIIT%0aPlease refer to our app and urgent helpline page in case of emergency.%0aLink of our app%0ahttps://jiitcovid19appishjot.herokuapp.com/"> 
-        Share via Whatsapp 
-      </a>
     </div>
   </div>
+</div>
 {% endblock %}

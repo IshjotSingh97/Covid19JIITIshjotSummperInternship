@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block title %}Get News{% endblock %}
+{% block content %}
+<p class="h1" style="text-align: center;display: block;margin: 1rem auto;">Comments</p>
+<p class="h4" style="text-align: center;display: block;margin: 1rem auto;">Share Your Idea</p>
+<div class="row">
+    {% for comment in comments %}
+    <div class="col-md-7" style="margin: 0 auto;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">{{comment.title}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{comment.user}}</li>
+            </ol>
+        </nav>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

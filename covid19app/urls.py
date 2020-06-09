@@ -7,5 +7,8 @@ urlpatterns = [
     path('techstack',views.techstack,name='techstack'),
     path('trackingtable',views.trackingtable,name='trackingtable'),
     path('getnews',views.getnews,name='getnews'),
-    path('mythbusters',views.mythbusters,name="mythbusters")
+    path('mythbusters',views.mythbusters,name='mythbusters'),
+    path('acknowledgement',views.acknowledgement,name='acknowledgement'),
+    path('comments',views.comments,name='comments'),
+    path('getlike',views.getlike,name='getlike')
 ]
