@@ -13,6 +13,8 @@
     <!-- Add Material CSS, replace Bootstrap CSS -->
     <link href="{% static 'material.min.css' %}" rel="stylesheet">
     <link rel="icon" href="{% static 'jiit.png' %}" type="image/gif" sizes="16x16">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <style type="text/css">
     /* For mobile: */
 
@@ -71,6 +73,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'comments' %}">Comments</a>
                 </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Connect with Me
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="https://bit.ly/GithubProfileIshjot" style="font-size: 1rem;"><i class="fab fa-github"></i> Github</a>
+                            <a class="dropdown-item" href="https://bit.ly/LinkedinIshjot" style="font-size: 1rem;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                            <a class="dropdown-item" href="https://bit.ly/IshjotSinghResume" style="font-size: 1rem;"><i class="fa fa-globe"></i> Website</a>
+                            <a class="dropdown-item" href="mailto:ishjotsinghahluwalia@gmail.com" style="font-size: 1rem;"><i class="fas fa-envelope"></i> Email</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -80,13 +95,13 @@
         <p class="h1" style="text-align: center;display: block;margin: 1rem auto;">JIIT COVID-19 APP</p>
         <div class="row">
             <div class="col-md-4" style="padding: 1rem;">
-                <button type="button" class="btn btn-success"style="margin: 0 auto;display: block;" >
-                <a href="whatsapp://send?text=Covid19appJIIT%0aStay updated with Covid-19 tracking activities%0aPlease share our app and stay safe%0ahttps://jiitcovid19appishjot.herokuapp.com/%0aThanks" style="color: white;text-decoration: none;">Share via Whatsapp</a>
+                <button type="button" class="btn btn-success" style="margin: 0 auto;display: block;">
+                    <a href="whatsapp://send?text=Covid19appJIIT%0aStay updated with Covid-19 tracking activities%0aPlease share our app and stay safe%0ahttps://jiitcovid19appishjot.herokuapp.com/%0aThanks" style="color: white;text-decoration: none;">Share via Whatsapp</a>
                 </button>
             </div>
             <div class="col-md-4" style="padding: 1rem;">
-                <button type="button" class="btn btn-info"style="margin: 0 auto;display: block;" >
-                <a href="{% url 'getlike' %}" style="color: white;text-decoration: none;">{{globalLike}} Likes (Click To Like)</a>
+                <button type="button" class="btn btn-info" style="margin: 0 auto;display: block;">
+                    <a href="{% url 'getlike' %}" style="color: white;text-decoration: none;">{{globalLike}} Likes (Click To Like)</a>
                 </button>
             </div>
             <div class="col-md-4" style="padding: 1rem;">
@@ -112,7 +127,7 @@
                                         <label for="user">Username</label>
                                         <input type="text" class="form-control" id="user" aria-describedby="emailHelp" name="user" placeholder="Username">
                                     </div>
-                                <button type="submit" class="btn btn-primary">Comment</button>
+                                    <button type="submit" class="btn btn-primary">Comment</button>
                                 </form>
                             </div>
                             <div class="modal-footer">
