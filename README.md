@@ -16,3 +16,5 @@ A Full Stack Coronavirus Tracking App
 7.Move to http://127.0.0.1:8000/
 8.Please make sure it is http for localhost
 ```
+# App Link
+https://jiitcovid19appishjot.herokuapp.com/
